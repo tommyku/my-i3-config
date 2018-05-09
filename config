@@ -179,6 +179,8 @@ hide_edge_borders smart
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume `pacmd list-sinks | grep -e 'name:' | sed -n 's/\tname\: <\(.*\)>/\1/p'` +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume `pacmd list-sinks | grep -e 'name:' | sed -n 's/\tname\: <\(.*\)>/\1/p'` -5%
+bindsym Ctrl+Up exec --no-startup-id pactl set-sink-volume `pacmd list-sinks | grep -e 'name:' | sed -n 's/\tname\: <\(.*\)>/\1/p'` +5%
+bindsym Ctrl+Down exec --no-startup-id pactl set-sink-volume `pacmd list-sinks | grep -e 'name:' | sed -n 's/\tname\: <\(.*\)>/\1/p'` -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute `pacmd list-sinks | grep -e 'name:' | sed -n 's/\tname\: <\(.*\)>/\1/p'` toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle # mute mic
 
