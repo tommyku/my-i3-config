@@ -190,10 +190,12 @@ bindsym --release Shift+Print exec "scrot -s '/tmp/%s_%H%M_%d%m%Y_$wx$h.png'"
 bindsym --release $mod+Shift+Print exec "scrot -u -d 4 '/tmp/%s_%H%M_%d%m%Y_$wx$h.png'"
 
 # Startup applications
+exec --no-startup-id /usr/bin/clipit -n
 exec --no-startup-id /usr/bin/setxkbmap -option ctrl:nocaps
+exec --no-startup-id /usr/bin/fcitx
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/blueman-applet
-exec --no-startup-id /usr/bin/feh --bg-center "/home/kuchunkit/Pictures/BXv31FI.jpg"
+exec --no-startup-id /usr/bin/nitrogen --restore
 
 # Second screen
 exec --no-startup-id /usr/bin/xrandr --output HDMI-1 --auto --above LVDS-1
@@ -214,3 +216,6 @@ exec --no-startup-id /usr/bin/xautolock -time 10 -locker "/home/kuchunkit/.confi
 
 # touch pad
 exec --no-startup-id /home/kuchunkit/.config/i3/touchpad.sh
+
+# calendar
+bindsym $mod+c exec zenity --calendar
