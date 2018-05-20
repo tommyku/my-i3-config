@@ -99,28 +99,39 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1: Terminal
-bindsym $mod+2 workspace 2: Editor
-bindsym $mod+3 workspace 3: Chrome
-bindsym $mod+4 workspace 4: Firefox
-bindsym $mod+5 workspace 5: File
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+set $workplace1 ">_"
+set $workplace2 "Editor"
+set $workplace3 "Chrome"
+set $workplace4 "Firefox"
+set $workplace5 "File"
+set $workplace6 "6"
+set $workplace7 "7"
+set $workplace8 "8"
+set $workplace9 "9"
+set $workplace10 "10"
+
+bindsym $mod+1 workspace $workplace1
+bindsym $mod+2 workspace $workplace2
+bindsym $mod+3 workspace $workplace3
+bindsym $mod+4 workspace $workplace4
+bindsym $mod+5 workspace $workplace5
+bindsym $mod+6 workspace $workplace6
+bindsym $mod+7 workspace $workplace7
+bindsym $mod+8 workspace $workplace8
+bindsym $mod+9 workspace $workplace9
+bindsym $mod+0 workspace $workplace10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1: Terminal; workspace 1: Terminal;
-bindsym $mod+Shift+2 move container to workspace 2: Editor; workspace 2: Editor;
-bindsym $mod+Shift+3 move container to workspace 3: Chrome; workspace 3: Chrome;
-bindsym $mod+Shift+4 move container to workspace 4: Firefox; workspace 4: Firefox;
-bindsym $mod+Shift+5 move container to workspace 5: File; workspace 5: File
-bindsym $mod+Shift+6 move container to workspace 6; workspace 6;
-bindsym $mod+Shift+8 move container to workspace 8; workspace 8;
-bindsym $mod+Shift+7 move container to workspace 7; workspace 7;
-bindsym $mod+Shift+9 move container to workspace 9; workspace 9;
-bindsym $mod+Shift+0 move container to workspace 10; workspace 10;
+bindsym $mod+Shift+1 move container to workspace $workplace1; workspace $workplace1;
+bindsym $mod+Shift+2 move container to workspace $workplace2; workspace $workplace2;
+bindsym $mod+Shift+3 move container to workspace $workplace3; workspace $workplace3;
+bindsym $mod+Shift+4 move container to workspace $workplace4; workspace $workplace4;
+bindsym $mod+Shift+5 move container to workspace $workplace5; workspace $workplace5;
+bindsym $mod+Shift+6 move container to workspace $workplace6; workspace $workplace6;
+bindsym $mod+Shift+7 move container to workspace $workplace7; workspace $workplace7;
+bindsym $mod+Shift+8 move container to workspace $workplace8; workspace $workplace8;
+bindsym $mod+Shift+9 move container to workspace $workplace9; workspace $workplace9;
+bindsym $mod+Shift+0 move container to workspace $workplace10; workspace $workplace10;
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -206,9 +217,9 @@ bindsym Ctrl+$mod+Shift+Down move workspace to output down
 new_window 1pixel
 
 # Assigning applications to workspaces
-assign [class="(?i)google-chrome"] 3: Chrome
-assign [class="(?i)firefox"] 4: Firefox
-assign [class="(?i)nautilus"] 5: File
+assign [class="(?i)google-chrome"] $workplace3
+assign [class="(?i)firefox"] $workplace4
+assign [class="(?i)nautilus"] $workplace5
 
 # lock screen
 bindsym Ctrl+$mod+l exec "/home/kuchunkit/.config/i3/i3lock.sh"
