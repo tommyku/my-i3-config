@@ -168,22 +168,25 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    status_command i3status --config ~/.config/i3/i3/i3status.conf
-    font pango:Ubuntu Mono 10
-    position top
-    strip_workspace_numbers yes
-    separator_symbol "|"
-    colors {
-        background  #282828
-        statusline  #DDDDDD
-        separator   #7addda
-        focused_workspace   #2B83A6 #2B83A6 #DDDDDD
-        active_workspace    #212121 #212121 #DDDDDD
-        inactive_workspace  #212121 #212121 #DDDDDD
-        urgent_workspace #D64E4E #D64E4E #DDDDDD
-    }
-}
+#bar {
+    #status_command i3status --config ~/.config/i3/i3/i3status.conf
+    #font pango:Ubuntu Mono 10
+    #position top
+    #strip_workspace_numbers yes
+    #separator_symbol "|"
+    #colors {
+        #background  #282828
+        #statusline  #DDDDDD
+        #separator   #7addda
+        #focused_workspace   #2B83A6 #2B83A6 #DDDDDD
+        #active_workspace    #212121 #212121 #DDDDDD
+        #inactive_workspace  #212121 #212121 #DDDDDD
+        #urgent_workspace #D64E4E #D64E4E #DDDDDD
+    #}
+#}
+
+# polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 hide_edge_borders smart
 
@@ -222,11 +225,11 @@ assign [class="(?i)firefox"] $workplace4
 assign [class="(?i)nautilus"] $workplace5
 
 # lock screen
-bindsym Ctrl+$mod+l exec "/home/kuchunkit/.config/i3/i3/i3lock.sh"
-exec --no-startup-id /usr/bin/xautolock -time 10 -locker "/home/kuchunkit/.config/i3/i3/i3lock.sh" &
+bindsym Ctrl+$mod+l exec "$HOME/.config/i3/i3/i3lock.sh"
+exec --no-startup-id /usr/bin/xautolock -time 10 -locker "$HOME/.config/i3/i3/i3lock.sh" &
 
 # touch pad
-exec --no-startup-id /home/kuchunkit/.config/i3/i3/touchpad.sh
+exec --no-startup-id $HOME/.config/i3/i3/touchpad.sh
 
 # calendar
 bindsym $mod+c exec zenity --calendar
