@@ -46,12 +46,12 @@ module-margin-right = 2
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=9;1
 
-font-0 = Ubuntu-Mono:size=9;3
+font-0 = Noto Sans:size=9;3
 font-1 = FontAwesome:size=9;3
 
 modules-left = i3
-modules-center = date
-modules-right = pulseaudio memory cpu wlan battery temperature powermenu
+modules-center =
+modules-right = pulseaudio memory cpu wlan battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -274,10 +274,10 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1.0
 
-date =
-date-alt = " %Y-%m-%d"
+date = "%a %Y-%m-%d"
+date-alt = "%a %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -406,7 +406,7 @@ label-warn-foreground = ${colors.secondary}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
 type = custom/menu
