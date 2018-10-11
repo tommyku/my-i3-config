@@ -209,7 +209,7 @@ exec --no-startup-id /usr/bin/setxkbmap -option ctrl:nocaps
 exec --no-startup-id /usr/bin/fcitx
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/blueman-applet
-exec --no-startup-id /usr/bin/nitrogen --restore
+exec --no-startup-id /usr/local/bin/wal -R
 
 # Second screen
 exec --no-startup-id /usr/bin/xrandr --output HDMI-1 --auto --above LVDS-1
